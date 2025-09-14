@@ -13,7 +13,7 @@ app.use('/menu', menuRoutes)
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.send('Welcome to our Hotel')
 })
 
 
