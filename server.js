@@ -3,6 +3,8 @@ const db = require('./db')
 const bodyParser = require('body-parser')
 const personRoutes = require('./routes/personRoutes')
 const menuRoutes = require('./routes/menuRoutes')
+require('dotenv').config();
+const port = process.env.PORT || 3000; 
 const app = express()
 
 app.use(bodyParser.json());
