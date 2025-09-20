@@ -13,14 +13,14 @@ const app = express();
 
 const logRequest = (req, res, next) => {
   console.log(`${new Date().toLocaleString()} Request Made to: ${req.originalUrl}`);
-  next() // move to the next phase
+  next(); // move to the next phase
 }
 
 app.use(passport.initialize());
 const localAuthMiddleware = passport.authenticate('local', {session: false});
 app.use(bodyParser.json());
 app.use(logRequest);
-app.use('/person', localAuthMiddleware, personRoutes);
+app.use('/person', personRoutes);
 app.use('/menu', menuRoutes);
 
 
